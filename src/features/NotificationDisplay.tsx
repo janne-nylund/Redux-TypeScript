@@ -18,7 +18,8 @@ const NotificationDisplay = () => {
     >
       <b>
         <i>
-          {!!notification.message ? `'${notification.message}'` : " "}&nbsp;
+          {!!notification.message ? `'${notification.message}'` : " "}
+          &nbsp;&nbsp;
         </i>
       </b>
       {notification.type === "ADD"
