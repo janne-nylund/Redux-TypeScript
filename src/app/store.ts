@@ -6,7 +6,7 @@ import filterReducer from "../reducers/filterReducer";
 const rootReducer = combineReducers({
   notes: notesReducer,
   notification: notificationReducer,
-  filter: filterReducer
+  filter: filterReducer,
 });
 
 export const store = createStore(rootReducer);
@@ -14,5 +14,6 @@ export const store = createStore(rootReducer);
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 
-// Inferred type: e.g. {posts: PostsState, comments: CommentsState, users: UsersState}
+// Inferred type:
+// e.g. {notes: NotesState, notification: NotificationState, filter: FilterState}
 export type AppDispatch = typeof store.dispatch;
