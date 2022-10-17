@@ -14,8 +14,8 @@ const initialState: NotesState = {
   notes: [
     { id: "asdasd12", text: "Hello Redux", important: true },
     { id: "ghjghj34", text: "This is TypeScript", important: true },
-    { id: "zcxzcx56", text: "And these are notes", important: false }
-  ]
+    { id: "zcxzcx56", text: "And these are notes", important: false },
+  ],
 };
 
 const notesReducer = (state = initialState, action: NoteAction) => {
@@ -25,7 +25,7 @@ const notesReducer = (state = initialState, action: NoteAction) => {
     }
     case "DELETE_NOTE": {
       const newNotes = [
-        ...state.notes.filter((note) => note.id !== action.payload.id)
+        ...state.notes.filter((note) => note.id !== action.payload.id),
       ];
       return { ...state, notes: [...newNotes] };
     }
@@ -34,9 +34,11 @@ const notesReducer = (state = initialState, action: NoteAction) => {
       const toggledNote = note ? { ...note, important: !note.important } : note;
       return {
         ...state,
-        notes: state.notes.map((note) => {
-          return note.id === toggledNote?.id ? toggledNote : note;
-        })
+        notes: [
+          ...state.notes.map((note) => {
+            return note.id === toggledNote?.id ? toggledNote : note;
+          }),
+        ],
       };
     }
     default:

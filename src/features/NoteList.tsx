@@ -27,7 +27,7 @@ const NoteList: React.FC<Props> = ({ onDeleteNote, onToggle, filterNotes }) => {
   const filter = useAppSelector((state) => state.filter.filter);
 
   const notesToShow = filterNotes(notes, filter);
-
+  console.log(notes);
   return (
     <div className="notes-wrapper">
       {notesToShow.map((note) => (
