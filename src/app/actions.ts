@@ -17,7 +17,7 @@ export const addNote = (note: Note): NoteAction => {
   };
 };
 
-// alternative way to return an action object
+// alternative ("cleaner/less verbose") way to return an action object
 export const deleteNote = (note: Note): NoteAction => ({
   type: "DELETE_NOTE",
   payload: note,
