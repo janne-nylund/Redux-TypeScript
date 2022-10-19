@@ -7,7 +7,7 @@ interface filterState {
 export type Filter = "all" | "regular" | "important";
 
 const initialState: filterState = {
-  filter: "all"
+  filter: "all",
 };
 
 const filterReducer = (state = initialState, action: NoteAction) => {

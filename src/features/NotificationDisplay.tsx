@@ -16,17 +16,18 @@ const NotificationDisplay = () => {
           : null
       }`}
     >
-      <b>
-        <i>
-          {!!notification.message ? `'${notification.message}'` : " "}
-          &nbsp;&nbsp;
-        </i>
-      </b>
-      {notification.type === "ADD"
-        ? " added to the list of notes!"
-        : notification.type === "DELETE"
-        ? " deleted from the list of notes!"
-        : null}
+      {!!notification.type && (
+        <div>
+          <b>
+            <i>{notification.message}&nbsp;&nbsp;</i>
+          </b>
+          <span>
+            {notification.type === "ADD"
+              ? " added to the list of notes!"
+              : " deleted from the list of notes!"}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

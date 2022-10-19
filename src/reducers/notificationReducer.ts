@@ -10,7 +10,7 @@ export interface Notification {
 }
 
 const initialState: NotificationState = {
-  notification: { message: "", type: undefined }
+  notification: { message: "", type: undefined },
 };
 
 const notificationReducer = (state = initialState, action: NoteAction) => {
@@ -20,8 +20,8 @@ const notificationReducer = (state = initialState, action: NoteAction) => {
         ...state,
         notification: {
           message: action.payload.message,
-          type: action.payload.type
-        }
+          type: action.payload.type,
+        },
       };
     }
     default:

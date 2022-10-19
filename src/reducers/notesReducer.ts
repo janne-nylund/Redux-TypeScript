@@ -24,10 +24,10 @@ const notesReducer = (state = initialState, action: NoteAction) => {
       return { ...state, notes: [...state.notes, action.payload] };
     }
     case "DELETE_NOTE": {
-      const newNotes = [
-        ...state.notes.filter((note) => note.id !== action.payload.id),
-      ];
-      return { ...state, notes: [...newNotes] };
+      return {
+        ...state,
+        notes: state.notes.filter((note) => note.id !== action.payload.id),
+      };
     }
     case "TOGGLE_IMPORTANT": {
       const note = state.notes.find((note) => note.id === action.payload);
