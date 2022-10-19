@@ -1,2 +1,3 @@
 # Redux-TypeScript
-Created with CodeSandbox
+
+My first test project with "Old School" Redux and Typescript
